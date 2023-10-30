@@ -5,30 +5,111 @@ import {
   AiFillYoutube,
 } from "react-icons/ai";
 import { BsFillMoonStarsFill, BsPerson } from "react-icons/bs";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link  from "next/link";
 import jake_wave from "../public/jacob_w.png";
 import education from "../public/education.png";
-import code from "../public/code.png";
-import design from "../public/design.png";
-import consulting from "../public/consulting.png";
 import skidraw from "../public/skidraw.png";
 import Image from "next/image";
 import {FaCameraRetro} from 'react-icons/fa';
-import {BsPersonCircle} from 'react-icons/bs';
+import {BsPersonCircle, BsFillArrowDownCircleFill, BsFillArrowUpCircleFill} from 'react-icons/bs';
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import csu from "../public/csu.jpeg";
+import cudenver from "../public/cudenver.jpeg";
 
 
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
   const [skillsMode, setSkillsMode] = useState(false);
-  const [awardsMode, setAwardsMode] = useState(false);
+  const [militarySection, setMilitarySection] = useState(false);
+  const [geekSquadSection, setGeekSquadSection] = useState(false);
+  const [isRotated, setIsRotate] = useState(false);
+  const [milRotate, setMilRotate] = useState(false);
+  const technicalSkillsRef = useRef(null);
+  const awardsCertsRef = useRef(null);
+  const containerRef = useRef(null);
  
+  const handleArrowClick = () => {
+    setGeekSquadSection(!geekSquadSection);
+    setIsRotate(!isRotated);
+  };
+
+  const handleMilClick = () => {
+    setMilitarySection(!militarySection);
+    setMilRotate(!milRotate);
+  }
+
   const items = [
   { id: 1, title: 'Back End Developer', department: 'Engineering', type: 'Full-time', location: 'Remote' },
   { id: 2, title: 'Front End Developer', department: 'Engineering', type: 'Full-time', location: 'Remote' },
   { id: 3, title: 'User Interface Designer', department: 'Design', type: 'Full-time', location: 'Remote' },
   ]
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const container = containerRef.current;
+
+    let sections = gsap.utils.toArray(".panel");
+    
+    // Technical Skills Animation
+    const technicalSkillsTween = gsap.to(technicalSkillsRef.current, {
+      opacity: 0, // Start with opacity 0
+      scrollTrigger: {
+        trigger: technicalSkillsRef.current,
+        start: "top-=200",
+        end: "bottom center",
+        scrub: 1,
+        pin: true,
+      },
+      x: -350,
+      ease: "none",
+      duration: 6
+    });
+
+    gsap.to(sections, {
+      xPercent: -100 * (sections.length - 1),
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".scroll-container",
+        pin: true,
+        scrub: 1,
+        snap: 1 / (sections.length - 1),
+        end: () => "+=" +
+        document.querySelector(".scroll-container").offsetWidth
+      }
+    });
+
+  
+
+    // Awards and Certifications Animation
+    const awardsCertsTween = gsap.to(awardsCertsRef.current, {
+      opacity: 0, // Start with opacity 0
+      scrollTrigger: {
+        trigger: awardsCertsRef.current,
+        start: "top-=200",
+        end: "bottom center",
+        scrub: 1,
+        pin: true,
+        markers:true,
+      },
+      x: -350,
+      ease: "none",
+      duration: 6
+    });
+
+    // Cleanup function to remove the scroll trigger when the component unmounts
+    return () => {
+      technicalSkillsTween.kill();
+      awardsCertsTween.kill();
+      ScrollTrigger.getAll().forEach((trigger) => {
+        trigger.kill();
+      });
+    };
+  }, []);
+
 
 
   return (
@@ -40,22 +121,22 @@ export default function Home() {
       </Head>
       <main className="bg-white dark:bg-gray-900 w-screen">
       <div className="before:content-[''] absolute w-full h-full"> 
-        <div class="snow-ball-container"> 
-            <div class="snow-ball"></div> 
-            <div class="snow-ball"></div> 
-            <div class="snow-ball"></div> 
-            <div class="snow-ball"></div> 
-            <div class="snow-ball"></div> 
-            <div class="snow-ball"></div> 
-            <div class="snow-ball"></div> 
-            <div class="snow-ball"></div> 
-            <div class="snow-ball"></div> 
-            <div class="snow-ball"></div> 
-            <div class="snow-ball"></div> 
-            <div class="snow-ball"></div> 
-            <div class="snow-ball"></div> 
-            <div class="snow-ball"></div> 
-            <div class="snow-ball"></div> 
+        <div className="snow-ball-container"> 
+            <div className="snow-ball"></div> 
+            <div className="snow-ball"></div> 
+            <div className="snow-ball"></div> 
+            <div className="snow-ball"></div> 
+            <div className="snow-ball"></div> 
+            <div className="snow-ball"></div> 
+            <div className="snow-ball"></div> 
+            <div className="snow-ball"></div> 
+            <div className="snow-ball"></div> 
+            <div className="snow-ball"></div> 
+            <div className="snow-ball"></div> 
+            <div className="snow-ball"></div> 
+            <div className="snow-ball"></div> 
+            <div className="snow-ball"></div> 
+            <div className="snow-ball"></div> 
         </div> 
     </div> 
         <section>
@@ -93,8 +174,8 @@ export default function Home() {
             </ul>
             </div>
           </nav>
-          <div className="text-center w-full">
-            <h2 className="relative text-9xl py-8 text-teal-600 font-medium dark:text-white md:text-9xl italic font-serif text-black opacity-60">
+          <div className="h-screen pt-36 text-center w-full">
+            <h2 className="relative text-9xl text-teal-600 font-medium dark:text-white md:text-9xl italic font-serif text-black opacity-60">
               Jacob Heinrich
             </h2>
             <h3 className="relative text-2xl dark:text-white md:text-3xl text-black opacity-60">
@@ -102,59 +183,104 @@ export default function Home() {
             </h3>
             <div className="relative text-4xl flex justify-center gap-16 py-3 text-gray-600 dark:text-white text-black">
               <Link href="/photography"><button className="opacity-60 transition ease-in-out hover:opacity-100 duration-500"><FaCameraRetro /></button></Link>
-              <Link href="/about"><button className="opacity-60 transition ease-in-out hover:opacity-100 duration-500"><BsPersonCircle /></button></Link>
               <AiFillYoutube />
+              <Link href="#about"><button className="opacity-60 transition ease-in-out hover:opacity-100 duration-500"><FaCameraRetro /></button></Link>
+
             </div>
           </div>
+          <section>
+          <div className="scroll-smooth text-center h-screen"> 
+              <div className="technicalSkills" ref={technicalSkillsRef}>
+                <h1 className="relative font-anton text-6xl font-bold text-white p-4 underline opacity-80">
+                Technical Skills
+                </h1>
+              <h4 className="py-4 dark:text-white text-2xl font-rajdhani">Python, C, HTML/CSS, Javascript, Java, React, TailwindCSS, Node.js</h4>
+              </div>
+              </div>
+              </section>
+              <section>
+              <div className="scroll-smooth text-center h-screen"> 
+              <div className="awardCerts" ref={awardsCertsRef}>
+                <h1 className="relative font-anton text-6xl font-bold text-white p-4 underline opacity-80">
+                Awards and Certifications
+                </h1>
+              <h4 className="py-4 dark:text-white text-2xl font-rajdhani">Apple Certified Technician</h4>
+              <h4 className="py-4 dark:text-white text-2xl font-rajdhani">Air Force Meritourious Service Medal</h4>
+              <h4 className="py-4 dark:text-white text-2xl font-rajdhani">Afghanistan Campaign Medal</h4>
+              </div>
+              </div>
+        </section>
+        </section>
+        <section className="h-full">
         </section>
         <section>
-          <div className="lg:flex">
-            <div className="text-center p-10 rounded-xl my-10 flex-1">
-              <div className="pt-24">
-                <button onClick={()=> setSkillsMode(!skillsMode)} className="relative rounded-full bg-gradient-to-r from-red-500 to-orange-500 border-solid border-white text-2xl font-bold text-white p-4 opacity-70 transition ease-in-out hover:opacity-100 duration-500">
-                Technical Skills
-                </button>
-                </div>
-              <div className={`transition-all duration-1000 ${skillsMode ? "opacity-100" : "opacity-0"}`}>
-              <h4 className="py-4 dark:text-white">Python</h4>
-              <h4 className="py-4 dark:text-white">C</h4>
-              <h4 className="py-4 dark:text-white">HTML/CSS</h4>
-              <h4 className="py-4 dark:text-white">Javascript</h4>
+        <div ref={containerRef} className="scroll-container overflow-y-hidden overflow-x-hidden w-screen text-white whitespace-nowrap bg-teal-800 bg-opacity-25">
+        <div className="panel h-screen inline-block flex-shrink-0 justify-center items-center text-white min-w-full text-center font-rajdhani text-4xl">
+        <h1 className="text-5xl font-bold pt-96">Bachelor of Arts in Economics at University of Colorado</h1>
+        <p className="animate-pulse duration-1000 pt-6 underline">Coursework</p>
+        <ul className="text-xl">
+          <li>Statistics</li>
+          <li>Econometrics</li>
+          <li>Environmental Economics</li>
+          <li>Macroeconomics</li>
+          <li>Microeconomics</li>
+          <li>Calculus I</li>
+        </ul>
+        </div>
+        <div className="panel h-screen inline-block flex-shrink-0 items-center justify-center text-white min-w-full text-center font-rajdhani text-4xl">
+        <h1 className="text-5xl font-bold">Bachelor of Science in Computer Science at Colorado State University</h1>
+        <p className="animate-pulse duration-100 pt-6 text-4xl underline">Coursework</p>
+        <ul className="text-xl">
+          <li>Operating Systems</li>
+          <li>Data Structures</li>
+          <li>Discrete Mathematics</li>
+          <li>Web Development</li>
+          <li>Computer Graphics</li>
+          <li>Computer Architecture</li>
+        </ul>
+        </div>
+        </div>
+        </section>
+        <a id="about">
+        <section>
+          <div className="h-screen text-white rounded-lg opacity-80">
+              <h2 className="text-4xl pl-6 pt-6 font-rajdhani font-bold">
+                Hey, I'm Jacob!
+              </h2>
+              <p className="pt-6 pl-6 pr-6 text-lg font-rajdhani font-bold">
+              With eight years of service in the military, I embarked on a journey to pursue my true passion: technology. 
+              This led me to Colorado State University, where I pursued a second Bachelor's degree in Computer Science. Through my studies, I delved deep into the world of coding and software development, 
+              exploring intricate concepts such as data structures, algorithms, and web development. 
+              This journey ignited a love for software engineering within me. The process of crafting elegant code and building innovative solutions resonated deeply, 
+              captivating my curiosity and inspiring my creativity. 
+              </p>
+              <h1 className="block pt-6 pl-6 text-4xl font-rajdhani font-bold">2013 - 2021 <BsFillArrowDownCircleFill onClick={handleMilClick} className={milRotate ? "rotate-180 duration-300 hover:opacity-80" : "duration-300 hover:opacity-80"}></BsFillArrowDownCircleFill></h1>
+              {militarySection ?
+              <p className="pl-6 pr-6 pt-6 text-lg font-rajdhani font-bold">
+              In my eight years of military service, I honed invaluable skills and learned lessons that have shaped my approach to challenges. 
+              My role as an Aircraft Armament Technician demanded precision, expertise, and quick thinking in troubleshooting and repairing weapons systems on F-16 Aircraft. This hands-on experience not only deepened 
+              my technical knowledge but also cultivated crucial decision-making skills.
+              My role led me to gain experience in deciphering complex wiring diagrams, emphasizing the importance of attention to detail and meticulous problem-solving. This experience instilled in me a passion
+              for understanding intricate systems—a passion that seamlessly translates into my enthusiasm for software engineering.
+              </p>: <></>}
+              {!militarySection ?
+              <h1 className="pt-48 pl-6 text-4xl font-rajdhani">2021 - Current<BsFillArrowDownCircleFill onClick={handleArrowClick} className={isRotated ? "rotate-180 duration-300 hover:opacity-80" : "duration-300 hover:opacity-80"}></BsFillArrowDownCircleFill></h1>:<></>}
+              {geekSquadSection ?
+              <p className="pl-6 pr-6 pt-6 text-lg font-rajdhani font-bold">
+              During my time at Colorado State University, I had the privilege of working with Geek Squad—an experience that marked my foray into the realm of IT. 
+              This hands-on experience not only sharpened my technical skills but also honed my abilities in effective communication and conflict resolution.
+              Navigating the diverse landscape of IT challenges, I learned the importance of clear communication, patience, and adaptability. Resolving software issues became more than just technical problem-solving; 
+              it became an opportunity to bridge gaps, ease frustrations, and foster positive interactions. 
+              This experience reinforced my passion for technology and its potential to transform lives. It also affirmed my belief in the power of empathy and understanding in overcoming technical hurdles. 
+              As I transition into a career as a software engineer, I carry these lessons with me, ready to approach every 
+              challenge with a unique blend of technical expertise and human connection.
+              </p>: <></>}
               </div>
-            </div>
-            <div className="lg:pr-96 text-center">
-            <div className="lg:pt-44">
-                <button onClick={()=> setAwardsMode(!awardsMode)} className="relative rounded-full bg-gradient-to-r from-red-500 to-orange-500 border-solid border-white text-2xl font-bold text-white p-4 opacity-70 transition ease-in-out hover:opacity-100 duration-500">
-                Awards and Certifications
-                </button>
-                </div>
-              <div className={`transition-all duration-1000 ${awardsMode ? "opacity-100" : "opacity-0"}`}>
-              <h1 className="py-4 dark:text-white">Apple Certified Technician</h1>
-              <h1 className="py-4 dark:text-white">Afghanistan Campaign Medal</h1>
-              <h1 className="py-4 dark:text-white">Air Force Meritourious Service Medal</h1>
-              </div> 
-            </div>
-            </div>
-        </section>
-        <section className="py-10">
-          {/* <div>
-            <h3 className="text-3xl py-1 dark:text-white ">Portofolio</h3>
-            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
-              Since the beginning of my journey as a freelance designer and
-              developer, I've done remote work for
-              <span className="text-teal-500"> agencies </span>
-              consulted for <span className="text-teal-500">startups </span>
-              and collaborated with talanted people to create digital products
-              for both business and consumer use.
-            </p>
-            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
-              I offer from a wide range of services, including brand design,
-              programming and teaching.
-            </p>
-          </div> */}
-          <div><h1 className="pl-6 text-white opacity-50">Contact: jacobheinrich45@gmail.com</h1></div>
-        </section>
+            </section>
+            </a>
       </main>
     </div>
   );
 }
+
+

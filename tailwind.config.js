@@ -10,6 +10,8 @@ module.exports = {
       fontFamily: {
         burtons: "burtons",
         poppins: ["Poppins", "sans-serif"],
+        anton: ["Anton", "sans-serif"],
+        rajdhani: ["Rajdhani", "sans-serif"],
       },
     },
   },

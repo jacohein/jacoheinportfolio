@@ -72,7 +72,6 @@ export default function AboutPage() {
                 <li>Problem Solving</li>
                 <li>Leadership</li>
               </ul>
-
               </div>
               </div>
             <div className="row-start-0 row-end-0 col-start-3 cold-end-3">
