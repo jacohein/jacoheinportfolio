@@ -121,7 +121,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="bg-white dark:bg-gray-900 w-screen">
-      <div className="before:content-[&apos;&apos;] absolute w-full h-full"> 
+      <div className="before:content-[''] absolute w-full h-full"> 
         <div className="snow-ball-container"> 
             <div className="snow-ball"></div> 
             <div className="snow-ball"></div> 
@@ -245,14 +245,14 @@ export default function Home() {
         <section id="about">
           <div className="h-screen text-white rounded-lg opacity-80">
               <h2 className="text-4xl pl-6 pt-6 font-rajdhani font-bold">
-                Hey, I&apos;m Jacob!
+                "Hey, I'm Jacob!"
               </h2>
               <p className="pt-6 pl-6 pr-6 text-lg font-rajdhani font-bold">
-              With eight years of service in the military, I embarked on a journey to pursue my true passion: technology. 
-              This led me to Colorado State University, where I pursued a second Bachelor&apos;s degree in Computer Science. Through my studies, I delved deep into the world of coding and software development, 
+              "With eight years of service in the military, I embarked on a journey to pursue my true passion: technology. 
+              This led me to Colorado State University, where I pursued a second Bachelor's degree in Computer Science. Through my studies, I delved deep into the world of coding and software development, 
               exploring intricate concepts such as data structures, algorithms, and web development. 
               This journey ignited a love for software engineering within me. The process of crafting elegant code and building innovative solutions resonated deeply, 
-              captivating my curiosity and inspiring my creativity. 
+              captivating my curiosity and inspiring my creativity."
               </p>
               <h1 className="block pt-6 pl-6 text-4xl font-rajdhani font-bold">2013 - 2021 <BsFillArrowDownCircleFill onClick={handleMilClick} className={milRotate ? "rotate-180 duration-300 hover:opacity-80" : "duration-300 hover:opacity-80"}></BsFillArrowDownCircleFill></h1>
               {militarySection ?
