@@ -7,7 +7,7 @@ import flower from "../../public/flower.jpeg";
 import sanfran from "../../public/sanfran.jpeg";
 import ladybug from "../../public/ladybug.jpeg";
 import Image from "next/image";
-import {AiFillHome} from 'react-icons/Ai';
+import {AiFillHome} from 'react-icons/ai';
 import {BsPersonCircle} from 'react-icons/bs';
 
 export default function PhotographyPage() {
