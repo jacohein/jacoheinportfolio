@@ -44,9 +44,9 @@ export default function Home() {
   }
 
   const items = [
-  { id: 1, title: &apos;Back End Developer&apos;, department: &apos;Engineering&apos;, type: &apos;Full-time&apos;, location: &apos;Remote&apos; },
-  { id: 2, title: &apos;Front End Developer&apos;, department: &apos;Engineering&apos;, type: &apos;Full-time&apos;, location: &apos;Remote&apos; },
-  { id: 3, title: &apos;User Interface Designer&apos;, department: &apos;Design&apos;, type: &apos;Full-time&apos;, location: &apos;Remote&apos; },
+  { id: 1, title: "Back End Developer", department: "Engineering", type: "Full-time", location: "Remote" },
+  { id: 2, title: "Front End Developer", department: "Engineering", type: "Full-time", location: "Remote" },
+  { id: 3, title: "User Interface Designer", department: "Design", type: "Full-time", location: "Remote" },
   ]
 
   useEffect(() => {
