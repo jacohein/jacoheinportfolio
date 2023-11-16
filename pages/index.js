@@ -3,20 +3,20 @@ import {
   AiFillTwitterCircle,
   AiFillLinkedin,
   AiFillYoutube,
-} from "react-icons/ai";
-import { BsFillMoonStarsFill, BsPerson } from "react-icons/bs";
-import { useState, useEffect, useRef } from "react";
-import Link  from "next/link";
-import jake_wave from "../public/jacob_w.png";
-import education from "../public/education.png";
-import skidraw from "../public/skidraw.png";
-import Image from "next/image";
-import {FaCameraRetro, FaUser, FaBook, FaEnvelope} from "react-icons/fa";
-import {BsPersonCircle, BsFillArrowDownCircleFill, BsFillArrowUpCircleFill} from "react-icons/bs";
-import { gsap } from "gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import csu from "../public/csu.jpeg";
-import cudenver from "../public/cudenver.jpeg";
+} from 'react-icons/ai';
+import { BsFillMoonStarsFill, BsPerson } from 'react-icons/bs';
+import { useState, useEffect, useRef } from 'react';
+import Link  from 'next/link';
+import jake_wave from '../public/jacob_w.png';
+import education from '../public/education.png';
+import skidraw from '../public/skidraw.png';
+import Image from 'next/image';
+import {FaCameraRetro, FaUser, FaBook, FaEnvelope} from 'react-icons/fa';
+import {BsPersonCircle, BsFillArrowDownCircleFill, BsFillArrowUpCircleFill} from 'react-icons/bs';
+import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import csu from '../public/csu.jpeg';
+import cudenver from '../public/cudenver.jpeg';
 
 
 
