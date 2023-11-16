@@ -11,8 +11,8 @@ import jake_wave from "../public/jacob_w.png";
 import education from "../public/education.png";
 import skidraw from "../public/skidraw.png";
 import Image from "next/image";
-import {FaCameraRetro, FaUser, FaBook, FaEnvelope} from 'react-icons/fa';
-import {BsPersonCircle, BsFillArrowDownCircleFill, BsFillArrowUpCircleFill} from 'react-icons/bs';
+import {FaCameraRetro, FaUser, FaBook, FaEnvelope} from "react-icons/fa";
+import {BsPersonCircle, BsFillArrowDownCircleFill, BsFillArrowUpCircleFill} from "react-icons/bs";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import csu from "../public/csu.jpeg";
@@ -44,9 +44,9 @@ export default function Home() {
   }
 
   const items = [
-  { id: 1, title: 'Back End Developer', department: 'Engineering', type: 'Full-time', location: 'Remote' },
-  { id: 2, title: 'Front End Developer', department: 'Engineering', type: 'Full-time', location: 'Remote' },
-  { id: 3, title: 'User Interface Designer', department: 'Design', type: 'Full-time', location: 'Remote' },
+  { id: 1, title: &apos;Back End Developer&apos;, department: &apos;Engineering&apos;, type: &apos;Full-time&apos;, location: &apos;Remote&apos; },
+  { id: 2, title: &apos;Front End Developer&apos;, department: &apos;Engineering&apos;, type: &apos;Full-time&apos;, location: &apos;Remote&apos; },
+  { id: 3, title: &apos;User Interface Designer&apos;, department: &apos;Design&apos;, type: &apos;Full-time&apos;, location: &apos;Remote&apos; },
   ]
 
   useEffect(() => {
@@ -121,7 +121,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="bg-white dark:bg-gray-900 w-screen">
-      <div className="before:content-[''] absolute w-full h-full"> 
+      <div className="before:content-[&apos;&apos;] absolute w-full h-full"> 
         <div className="snow-ball-container"> 
             <div className="snow-ball"></div> 
             <div className="snow-ball"></div> 
@@ -245,11 +245,11 @@ export default function Home() {
         <section id="about">
           <div className="h-screen text-white rounded-lg opacity-80">
               <h2 className="text-4xl pl-6 pt-6 font-rajdhani font-bold">
-                Hey, I'm Jacob!
+                Hey, I&apos;m Jacob!
               </h2>
               <p className="pt-6 pl-6 pr-6 text-lg font-rajdhani font-bold">
               With eight years of service in the military, I embarked on a journey to pursue my true passion: technology. 
-              This led me to Colorado State University, where I pursued a second Bachelor's degree in Computer Science. Through my studies, I delved deep into the world of coding and software development, 
+              This led me to Colorado State University, where I pursued a second Bachelor&apos;s degree in Computer Science. Through my studies, I delved deep into the world of coding and software development, 
               exploring intricate concepts such as data structures, algorithms, and web development. 
               This journey ignited a love for software engineering within me. The process of crafting elegant code and building innovative solutions resonated deeply, 
               captivating my curiosity and inspiring my creativity. 
