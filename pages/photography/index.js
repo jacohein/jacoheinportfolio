@@ -7,7 +7,6 @@ import flower from "../../public/flower.jpeg";
 import sanfran from "../../public/sanfran.jpeg";
 import ladybug from "../../public/ladybug.jpeg";
 import Image from "next/image";
-import jake_wave from "../../public/jacob_w.png";
 import {AiFillHome} from 'react-icons/Ai';
 import {BsPersonCircle} from 'react-icons/bs';
 

@@ -1,13 +1,7 @@
 import Head from "next/head";
-import {
-  AiFillTwitterCircle,
-  AiFillLinkedin,
-  AiFillYoutube,
-} from 'react-icons/ai';
 import { BsFillMoonStarsFill, BsPerson } from 'react-icons/bs';
 import { useState, useEffect, useRef } from 'react';
 import Link  from 'next/link';
-import jake_wave from '../public/jacob_w.png';
 import education from '../public/education.png';
 import skidraw from '../public/skidraw.png';
 import Image from 'next/image';
