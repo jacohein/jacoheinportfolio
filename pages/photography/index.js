@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { BsFillMoonStarsFill } from "react-icons/bs";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import ski from "../../public/ski.jpeg";
 import lillypad from "../../public/lillypad.jpeg";
 import flower from "../../public/flower.jpeg";
@@ -25,7 +25,6 @@ export default function PhotographyPage() {
             <div className="hidden lg:flex">
             <ul className="flex items-center">
             <Link href="/"><button className="bg-cyan-500 hover:bg-cyan-600 text-white px-4 py-2 border-none rounded-md ml-8">Home</button></Link>
-            <Link href="/about"><button className="bg-cyan-500 hover:bg-cyan-600 text-white px-4 py-2 border-none rounded-md ml-8">About</button></Link>
               <li className="pl-8">
                 <BsFillMoonStarsFill
                   onClick={() => setDarkMode(!darkMode)}
@@ -65,6 +64,7 @@ export default function PhotographyPage() {
                 height={"100%"}
                 layout="responsive"
                 src={ski}
+                quality = {100}
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -74,6 +74,7 @@ export default function PhotographyPage() {
                 height={"100%"}
                 layout="responsive"
                 src={flower}
+                quality = {100}
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -83,6 +84,7 @@ export default function PhotographyPage() {
                 height={"100%"}
                 layout="responsive"
                 src={ladybug}
+                quality = {100}
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -92,6 +94,7 @@ export default function PhotographyPage() {
                 height={"100%"}
                 layout="responsive"
                 src={sanfran}
+                quality = {100}
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -101,6 +104,7 @@ export default function PhotographyPage() {
                 height={"100%"}
                 layout="responsive"
                 src={lillypad}
+                quality = {100}
               />
             </div>
           </div>
@@ -108,3 +112,4 @@ export default function PhotographyPage() {
           </div>
     );
 }
+

@@ -11,7 +11,7 @@ import jake_wave from "../public/jacob_w.png";
 import education from "../public/education.png";
 import skidraw from "../public/skidraw.png";
 import Image from "next/image";
-import {FaCameraRetro} from 'react-icons/fa';
+import {FaCameraRetro, FaUser, FaBook, FaEnvelope} from 'react-icons/fa';
 import {BsPersonCircle, BsFillArrowDownCircleFill, BsFillArrowUpCircleFill} from 'react-icons/bs';
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
@@ -30,6 +30,8 @@ export default function Home() {
   const technicalSkillsRef = useRef(null);
   const awardsCertsRef = useRef(null);
   const containerRef = useRef(null);
+  const emailAddress = "jacobheinrich45@gmail.com";
+  const GithubProfile = "https://github.com/jacohein";
  
   const handleArrowClick = () => {
     setGeekSquadSection(!geekSquadSection);
@@ -93,7 +95,6 @@ export default function Home() {
         end: "bottom center",
         scrub: 1,
         pin: true,
-        markers:true,
       },
       x: -350,
       ease: "none",
@@ -183,9 +184,9 @@ export default function Home() {
             </h3>
             <div className="relative text-4xl flex justify-center gap-16 py-3 text-gray-600 dark:text-white text-black">
               <Link href="/photography"><button className="opacity-60 transition ease-in-out hover:opacity-100 duration-500"><FaCameraRetro /></button></Link>
-              <AiFillYoutube />
-              <Link href="#about"><button className="opacity-60 transition ease-in-out hover:opacity-100 duration-500"><FaCameraRetro /></button></Link>
-
+              <Link href="#about"><button className="opacity-60 transition ease-in-out hover:opacity-100 duration-500"><FaUser /></button></Link>
+              <Link href="#education"><button className="opacity-60 transition ease-in-out hover:opacity-100 duration-500"><FaBook /></button></Link>
+              <Link href="#contact"><button className="opacity-60 transition ease-in-out hover:opacity-100 duration-500"><FaEnvelope /></button></Link>
             </div>
           </div>
           <section>
@@ -213,8 +214,8 @@ export default function Home() {
         </section>
         <section className="h-full">
         </section>
-        <section>
-        <div ref={containerRef} className="scroll-container overflow-y-hidden overflow-x-hidden w-screen text-white whitespace-nowrap bg-teal-800 bg-opacity-25">
+        <section id="education">
+        <div ref={containerRef} className="scroll-container overflow-y-hidden overflow-x-hidden w-screen text-white whitespace-nowrap">
         <div className="panel h-screen inline-block flex-shrink-0 justify-center items-center text-white min-w-full text-center font-rajdhani text-4xl">
         <h1 className="text-5xl font-bold pt-96">Bachelor of Arts in Economics at University of Colorado</h1>
         <p className="animate-pulse duration-1000 pt-6 underline">Coursework</p>
@@ -241,8 +242,7 @@ export default function Home() {
         </div>
         </div>
         </section>
-        <a id="about">
-        <section>
+        <section id="about">
           <div className="h-screen text-white rounded-lg opacity-80">
               <h2 className="text-4xl pl-6 pt-6 font-rajdhani font-bold">
                 Hey, I'm Jacob!
@@ -277,7 +277,17 @@ export default function Home() {
               </p>: <></>}
               </div>
             </section>
-            </a>
+              <section className="opacity-80" id="contact">
+              <div className="bg-gray-100 p-8 rounded-lg shadow-md">
+                  <h2 className="text-2xl font-semibold mb-4">Contact Me</h2>
+                    <p className="mb-4">
+                      Email: <a href={`mailto:${emailAddress}`} className="text-blue-500">{emailAddress}</a>
+                    </p>
+                   <p>
+                      GitHub: <a href={GithubProfile} target="_blank" rel="noopener noreferrer" className="text-blue-500">{GithubProfile}</a>
+                  </p>
+              </div>
+              </section>
       </main>
     </div>
   );
