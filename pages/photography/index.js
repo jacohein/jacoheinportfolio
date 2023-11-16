@@ -15,7 +15,7 @@ export default function PhotographyPage() {
 
     return (
         <div className={darkMode ? "dark" : ""}>
-        <main className=" bg-white px-10 dark:bg-gray-900 md:px-20 lg:px-40">
+        <main className="bg-white px-10 dark:bg-gray-900 md:px-20 lg:px-40">
         <section>
         <nav className="py-4 mb-12 flex justify-between dark:text-white">
             <div>
