@@ -11,6 +11,8 @@ import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import csu from '../public/csu.jpeg';
 import cudenver from '../public/cudenver.jpeg';
+import me from '../public/me.png';
+import wave from '../public/jacob_w.PNG';
 
 
 
@@ -209,7 +211,7 @@ export default function Home() {
         <section className="h-full">
         </section>
         <section id="education">
-          <div className="lg:invisible dark:text-white text-center">
+          <div className="lg:hidden dark:text-white text-center">
             <h1>
               Bachelor of Arts in Economics
             </h1>
@@ -219,13 +221,13 @@ export default function Home() {
             <h1>
               Bachelor of Science in Computer Science
             </h1>
-            <p>
+            <p className="mb-96">
               Colorado State University
             </p>
           </div>
-        <div ref={containerRef} className="scroll-container overflow-y-hidden overflow-x-hidden w-screen text-white whitespace-nowrap invisible lg:visible">
+        <div ref={containerRef} className="scroll-container overflow-y-hidden overflow-x-hidden w-screen hidden md:block text-white whitespace-nowrap">
         <div className="panel h-screen inline-block flex-shrink-0 justify-center items-center text-white min-w-full text-center font-rajdhani lg:text-4xl">
-        <h1 className="lg:text-5xl font-bold pt-96">Bachelor of Arts in Economics at University of Colorado</h1>
+        <h1 className="font-bold pt-96">Bachelor of Arts in Economics at University of Colorado</h1>
         <p className="animate-pulse duration-1000 pt-6 underline">Coursework</p>
         <ul className="text-xl">
           <li>Statistics</li>
@@ -237,7 +239,7 @@ export default function Home() {
         </ul>
         </div>
         <div className="panel h-screen inline-block flex-shrink-0 items-center justify-center text-white min-w-full text-center font-rajdhani lg:text-4xl">
-        <h1 className="lg:text-5xl font-bold">Bachelor of Science in Computer Science at Colorado State University</h1>
+        <h1 className="font-bold">Bachelor of Science in Computer Science at Colorado State University</h1>
         <p className="animate-pulse duration-100 pt-6 lg:text-4xl underline">Coursework</p>
         <ul className="text-xl">
           <li>Operating Systems</li>
@@ -251,41 +253,53 @@ export default function Home() {
         </div>
         </section>
         <section id="about">
-          <div className="h-screen text-white rounded-lg opacity-80">
-              <h2 className="text-4xl pl-6 pt-6 font-rajdhani font-bold">
-                Hey, I&apos;m Jacob!
-              </h2>
-              <p className="pt-6 pl-6 pr-6 text-lg font-rajdhani font-bold">
-              With eight years of service in the military, I embarked on a journey to pursue my true passion: technology. 
+              <div className="text-white rounded-lg opacity-80 md:grid md:grid-cols-3 md:grid-rows-2 md:gap-12">
+                <div>
+                <h2 className="text-4xl pl-6 pt-6 font-rajdhani font-bold">
+                  Hey, I&apos;m Jacob!
+                </h2>
+                <p className="pt-6 pl-6 pr-6 pb-6 md:pb-0 text-lg font-rajdhani font-bold">
+                With eight years of service in the military, I embarked on a journey to pursue my true passion: technology. 
               This led me to Colorado State University, where I pursued a second Bachelor&apos;s degree in Computer Science. Through my studies, I delved deep into the world of coding and software development, 
               exploring intricate concepts such as data structures, algorithms, and web development. 
               This journey ignited a love for software engineering within me. The process of crafting elegant code and building innovative solutions resonated deeply, 
               captivating my curiosity and inspiring my creativity.
-              </p>
-              <h1 className="block pt-6 pl-6 text-4xl font-rajdhani font-bold">2013 - 2021 <BsFillArrowDownCircleFill onClick={handleMilClick} className={milRotate ? "rotate-180 duration-300 hover:opacity-80" : "duration-300 hover:opacity-80"}></BsFillArrowDownCircleFill></h1>
-              {militarySection ?
-              <p className="pl-6 pr-6 pt-6 text-lg font-rajdhani font-bold">
-              In my eight years of military service, I honed invaluable skills and learned lessons that have shaped my approach to challenges. 
-              My role as an Aircraft Armament Technician demanded precision, expertise, and quick thinking in troubleshooting and repairing weapons systems on F-16 Aircraft. This hands-on experience not only deepened 
-              my technical knowledge but also cultivated crucial decision-making skills.
-              My role led me to gain experience in deciphering complex wiring diagrams, emphasizing the importance of attention to detail and meticulous problem-solving. This experience instilled in me a passion
+                </p>
+                </div>
+                <div className="row-start-2 col-span-1">
+                <h1 className="pl-6 text-4xl font-rajdhani font-bold underline">2013 - 2021</h1>
+                <p className="pl-6 pr-6 pt-2 pb-6 text-lg font-rajdhani font-bold">
+                In my eight years of military service, I gained invaluable skills and learned lessons that have shaped my approach to challenges. 
+              My role as an Aircraft Armament Technician demanded precision, expertise, and quick thinking in troubleshooting and repairing weapons systems on F-16 Aircraft. This hands-on experience not only deepened my technical knowledge but also taught me 
+              about determination through failure which has helped me on the journey of switching career paths.  
+              My role in the military led me to gain experience in deciphering complex wiring diagrams, emphasizing the importance of attention to detail and meticulous problem-solving. This experience instilled in me a passion
               for understanding intricate systems—a passion that seamlessly translates into my enthusiasm for software engineering.
-              </p>: <></>}
-              {!militarySection ?
-              <h1 className="pt-48 pl-6 text-4xl font-rajdhani">2021 - Current<BsFillArrowDownCircleFill onClick={handleArrowClick} className={isRotated ? "rotate-180 duration-300 hover:opacity-80" : "duration-300 hover:opacity-80"}></BsFillArrowDownCircleFill></h1>:<></>}
-              {geekSquadSection ?
-              <p className="pl-6 pr-6 pt-6 text-lg font-rajdhani font-bold">
-              During my time at Colorado State University, I had the privilege of working with Geek Squad—an experience that marked my foray into the realm of IT. 
-              This hands-on experience not only sharpened my technical skills but also honed my abilities in effective communication and conflict resolution.
+                </p>
+                </div>
+                <div className="col-span-2">
+                <h1 className="pl-6 text-4xl font-rajdhani font-bold underline">2021 - Current</h1>
+                <p className="pl-6 pr-6 pt-2 pb-6 text-lg font-rajdhani font-bold">
+                During my time at Colorado State University, I had the privilege of working with Geek Squad—my first experience outside of the military in almost a decade. 
+              This experience not only sharpened my technical skills but also honed my abilities in effective communication and conflict resolution.
               Navigating the diverse landscape of IT challenges, I learned the importance of clear communication, patience, and adaptability. Resolving software issues became more than just technical problem-solving; 
               it became an opportunity to bridge gaps, ease frustrations, and foster positive interactions. 
               This experience reinforced my passion for technology and its potential to transform lives. It also affirmed my belief in the power of empathy and understanding in overcoming technical hurdles. 
               As I transition into a career as a software engineer, I carry these lessons with me, ready to approach every 
               challenge with a unique blend of technical expertise and human connection.
-              </p>: <></>}
+                </p>
+                </div>
+              <div className="col-start-2 row-start-1 pt-16">
+                <Image
+                  className="rounded-lg opacity-80"
+                  width={500}
+                  height={500}
+                  src={wave}
+                  quality={100}
+                />
               </div>
+            </div>
             </section>
-              <section className="opacity-80" id="contact">
+              <section className="opacity-80 mt-16" id="contact">
               <div className="bg-gray-100 p-8 rounded-lg shadow-md">
                   <h2 className="text-2xl font-semibold mb-4">Contact Me</h2>
                     <p className="mb-4">
@@ -302,3 +316,24 @@ export default function Home() {
 }
 
 
+{/* <h1 className="block pt-6 pl-6 text-4xl font-rajdhani font-bold">2013 - 2021 <BsFillArrowDownCircleFill onClick={handleMilClick} className={milRotate ? "rotate-180 duration-300 hover:opacity-80" : "duration-300 hover:opacity-80"}></BsFillArrowDownCircleFill></h1>
+              {militarySection ?
+              <p className="pl-6 pr-6 pt-6 text-lg font-rajdhani font-bold">
+              In my eight years of military service, I gained invaluable skills and learned lessons that have shaped my approach to challenges. 
+              My role as an Aircraft Armament Technician demanded precision, expertise, and quick thinking in troubleshooting and repairing weapons systems on F-16 Aircraft. This hands-on experience not only deepened my technical knowledge but also taught me 
+              about determination through failure which has helped me on the journey of switching career paths.  
+              My role in the military led me to gain experience in deciphering complex wiring diagrams, emphasizing the importance of attention to detail and meticulous problem-solving. This experience instilled in me a passion
+              for understanding intricate systems—a passion that seamlessly translates into my enthusiasm for software engineering.
+              </p>: <></>}
+              {!militarySection ?
+              <h1 className="pt-48 pl-6 text-4xl font-rajdhani">2021 - Current<BsFillArrowDownCircleFill onClick={handleArrowClick} className={isRotated ? "rotate-180 duration-300 hover:opacity-80" : "duration-300 hover:opacity-80"}></BsFillArrowDownCircleFill></h1>:<></>}
+              {geekSquadSection ?
+              <p className="pl-6 pr-6 pt-6 text-lg font-rajdhani font-bold">
+              During my time at Colorado State University, I had the privilege of working with Geek Squad—my first experience outside of the military in almost a decade. 
+              This experience not only sharpened my technical skills but also honed my abilities in effective communication and conflict resolution.
+              Navigating the diverse landscape of IT challenges, I learned the importance of clear communication, patience, and adaptability. Resolving software issues became more than just technical problem-solving; 
+              it became an opportunity to bridge gaps, ease frustrations, and foster positive interactions. 
+              This experience reinforced my passion for technology and its potential to transform lives. It also affirmed my belief in the power of empathy and understanding in overcoming technical hurdles. 
+              As I transition into a career as a software engineer, I carry these lessons with me, ready to approach every 
+              challenge with a unique blend of technical expertise and human connection.
+              </p>: <></>} */}

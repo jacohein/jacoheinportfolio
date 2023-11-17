@@ -13,10 +13,8 @@ module.exports = {
         anton: ["Anton", "sans-serif"],
         rajdhani: ["Rajdhani", "sans-serif"],
       },
-      screens: {
-        "xs": "200px"
-      },
     },
   },
   plugins: [],
 };
+
