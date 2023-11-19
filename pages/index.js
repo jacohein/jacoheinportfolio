@@ -13,11 +13,12 @@ import csu from '../public/csu.jpeg';
 import cudenver from '../public/cudenver.jpeg';
 import me from '../public/me.png';
 import wave from '../public/jacob_w.PNG';
+import res from '../public/JacobResume.jpg';
 
 
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
   const [skillsMode, setSkillsMode] = useState(false);
   const [militarySection, setMilitarySection] = useState(false);
   const [geekSquadSection, setGeekSquadSection] = useState(false);
@@ -157,7 +158,8 @@ export default function Home() {
               <li>
                 <a
                   className="relative bg-gradient-to-r from-cyan-500 text- to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8"
-                  href="#"
+                  href="/Resume" 
+                  target="_blank"
                 >
                   Resume
                 </a>
@@ -188,7 +190,7 @@ export default function Home() {
           <section>
           <div className="scroll-smooth text-center h-screen"> 
               <div className="technicalSkills" ref={technicalSkillsRef}>
-                <h1 className="relative font-anton lg:text-6xl text-4xl font-bold text-white p-4 underline opacity-80">
+                <h1 className="relative font-anton lg:text-6xl text-4xl font-bold dark:text-white p-4 underline opacity-80">
                 Technical Skills
                 </h1>
               <h4 className="py-4 dark:text-white lg:text-2xl text-xl font-rajdhani">Python, C, HTML/CSS, Javascript, Java, React, TailwindCSS, Node.js</h4>
@@ -198,7 +200,7 @@ export default function Home() {
               <section>
               <div className="scroll-smooth text-center h-screen"> 
               <div className="awardCerts" ref={awardsCertsRef}>
-                <h1 className="relative font-anton lg:text-6xl text-4xl font-bold text-white p-4 underline opacity-80">
+                <h1 className="relative font-anton lg:text-6xl text-4xl font-bold dark:text-white p-4 underline opacity-80">
                 Awards and Certifications
                 </h1>
               <h4 className="py-4 dark:text-white lg:text-2xl text-xl font-rajdhani">Apple Certified Technician</h4>
@@ -225,8 +227,8 @@ export default function Home() {
               Colorado State University
             </p>
           </div>
-        <div ref={containerRef} className="scroll-container overflow-y-hidden overflow-x-hidden w-screen hidden md:block text-white whitespace-nowrap">
-        <div className="panel h-screen inline-block flex-shrink-0 justify-center items-center text-white min-w-full text-center font-rajdhani lg:text-4xl">
+        <div ref={containerRef} className="scroll-container overflow-y-hidden overflow-x-hidden w-screen hidden md:block dark:text-white whitespace-nowrap">
+        <div className="panel h-screen inline-block flex-shrink-0 justify-center items-center dark:text-white min-w-full text-center font-rajdhani lg:text-4xl">
         <h1 className="font-bold pt-96">Bachelor of Arts in Economics at University of Colorado</h1>
         <p className="animate-pulse duration-1000 pt-6 underline">Coursework</p>
         <ul className="text-xl">
@@ -238,7 +240,7 @@ export default function Home() {
           <li>Calculus I</li>
         </ul>
         </div>
-        <div className="panel h-screen inline-block flex-shrink-0 items-center justify-center text-white min-w-full text-center font-rajdhani lg:text-4xl">
+        <div className="panel h-screen inline-block flex-shrink-0 items-center justify-center dark:text-white min-w-full text-center font-rajdhani lg:text-4xl">
         <h1 className="font-bold">Bachelor of Science in Computer Science at Colorado State University</h1>
         <p className="animate-pulse duration-100 pt-6 lg:text-4xl underline">Coursework</p>
         <ul className="text-xl">
@@ -253,7 +255,7 @@ export default function Home() {
         </div>
         </section>
         <section id="about">
-              <div className="text-white rounded-lg opacity-80 md:grid md:grid-cols-3 md:grid-rows-2 md:gap-12">
+              <div className="dark:text-white rounded-lg opacity-80 md:grid md:grid-cols-3 md:grid-rows-2 md:gap-12">
                 <div>
                 <h2 className="text-4xl pl-6 pt-6 font-rajdhani font-bold">
                   Hey, I&apos;m Jacob!
@@ -290,7 +292,7 @@ export default function Home() {
                 </div>
               <div className="col-start-2 row-start-1 pt-16">
                 <Image
-                  className="rounded-lg opacity-80"
+                  className="rounded-lg dark:opacity-80"
                   width={500}
                   height={500}
                   src={wave}
@@ -300,12 +302,12 @@ export default function Home() {
             </div>
             </section>
               <section className="opacity-80 mt-16" id="contact">
-              <div className="bg-gray-100 p-8 rounded-lg shadow-md">
+              <div className="dark:bg-gray-100 bg-black p-8 rounded-lg shadow-md">
                   <h2 className="text-2xl font-semibold mb-4">Contact Me</h2>
-                    <p className="mb-4">
+                    <p className="mb-4 text-white dark:text-black">
                       Email: <a href={`mailto:${emailAddress}`} className="text-blue-500">{emailAddress}</a>
                     </p>
-                   <p>
+                   <p className="text-white dark:text-black">
                       GitHub: <a href={GithubProfile} target="_blank" rel="noopener noreferrer" className="text-blue-500">{GithubProfile}</a>
                   </p>
               </div>

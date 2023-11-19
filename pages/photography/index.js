@@ -11,7 +11,7 @@ import {AiFillHome} from 'react-icons/ai';
 import {BsPersonCircle} from 'react-icons/bs';
 
 export default function PhotographyPage() {
-    const [darkMode, setDarkMode] = useState(true);
+    const [darkMode, setDarkMode] = useState(false);
 
     return (
         <div className={darkMode ? "dark" : ""}>
