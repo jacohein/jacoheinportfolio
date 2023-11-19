@@ -1,7 +1,7 @@
 <br />
 <div align="center">
 <h1>Portfolio Website</h1>
-<a href="https://jacoheinportfolio.vercel.app/"><strong>View Website</strong></a>
+<a href="https://jacoheinportfolio.vercel.app/" target="_blank" ><strong>View Website</strong></a>
 </div>
 <br/>
 
