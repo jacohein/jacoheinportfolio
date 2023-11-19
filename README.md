@@ -6,6 +6,13 @@
 <br/>
 
 # Tools I used
-* [![Next][Next.js][https://nextjs.org/]
-* [![React][React.js][https://react.dev/]
+* [Next](https://nextjs.org/)
+* [React](https://react.dev/)
+* [GSAP](https://gsap.com/)
+<br />
+
+
+# Contact Me
+* [Github](https://github.com/)
+* Email: jacobheinrich45@gmail.com
 
