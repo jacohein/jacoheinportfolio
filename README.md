@@ -6,9 +6,10 @@
 <br/>
 
 # Tools I used
-* [Next](https://nextjs.org/)
+* [NextJS](https://nextjs.org/)
 * [React](https://react.dev/)
 * [GSAP](https://gsap.com/)
+* [Vercel](https://vercel.com/)
 <br />
 
 
