@@ -15,5 +15,5 @@
 
 # Contact Me
 * [Github](https://github.com/)
-* Email: jacobheinrich45@gmail.com
+* jacobheinrich45@gmail.com
 
