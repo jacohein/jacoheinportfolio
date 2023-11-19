@@ -6,6 +6,6 @@
 <br/>
 
 # Tools I used
-* [![Next][Next.js][(https://nextjs.org/)]
-* [![React][React.js][(https://react.dev/)]
+* [![Next][Next.js][https://nextjs.org/]
+* [![React][React.js][https://react.dev/]
 
