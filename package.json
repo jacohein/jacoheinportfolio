@@ -16,6 +16,7 @@
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
     "firebase": "^9.10.0",
+    "framer-motion": "^10.16.15",
     "gsap": "^3.12.2",
     "moment": "^2.29.4",
     "next": "^12.3.1",

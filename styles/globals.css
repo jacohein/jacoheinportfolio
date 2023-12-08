@@ -238,3 +238,90 @@ a {
       opacity: 0; 
   } 
 }
+
+#progress {
+  position: relative;
+  top: 95px;
+  left: 20px;
+  transform: rotate(-90deg);
+}
+
+circle {
+  stroke-dashoffset: 0;
+  stroke-width: 15%;
+  fill: none;
+}
+
+.background {
+  stroke: black;
+  opacity: 0.3;
+}
+
+#progress .indicator {
+  stroke: black;
+}
+
+.list {
+  display: flex;
+  list-style: none;
+  height: 725px;
+  overflow-x: scroll;
+  flex: 0 0 600px;
+  margin: 0 auto;
+}
+
+::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+  background: #fff3;
+  -webkit-border-radius: 1ex;
+}
+
+::-webkit-scrollbar-thumb {
+  background: black;
+  -webkit-border-radius: 1ex;
+}
+
+::-webkit-scrollbar-corner {
+  background: #fff3;
+}
+
+.listElement {
+  flex: 0 0 1000px;
+  background: rgb(224, 222, 222);
+  margin: 0 20px 0 0;
+}
+
+.listElement:last-of-type {
+  margin: 0;
+}
+
+.box {
+  position:relative;
+  left:800px;
+  bottom:100px;
+  width: 50px;
+  height: 50px;
+  background: black;
+}
+
+.refresh {
+  padding: 5px;
+  position: absolute;
+  border: 1px dotted var(--accent);
+  border-radius: 5px;
+  width: 20px;
+  height: 20px;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+circle {
+  stroke-dashoffset: 0;
+  stroke-width: 15%;
+  fill: none;
+}
