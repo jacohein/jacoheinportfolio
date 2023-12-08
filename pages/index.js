@@ -375,8 +375,8 @@ export default function Home() {
           <h3 className="pt-6 text-2xl underline">About</h3>
             <div className="flex justify-center items-center">
               <p className="w-3/4">
-              Welcome to my portfolio website, a carefully built space where prospective you can glimpse into who I am and how I approach coding! As a dedicated developer, I've poured my passion into this portfolio, creating an environment that not only reflects my technical proficiency but also showcases my creative spirit.
-              This portfolio is more than just a collection of experience; it's a representation of my journey and dedication to my journey through software. Each line of code tells a story of problem-solving, innovation, and continuous learning. 
+              Welcome to my portfolio website, a carefully built space where prospective you can glimpse into who I am and how I approach coding! As a dedicated developer, I&apos;ve poured my passion into this portfolio, creating an environment that not only reflects my technical proficiency but also showcases my creative spirit.
+              This portfolio is more than just a collection of experience; it&apos;s a representation of my journey and dedication to my journey through software. Each line of code tells a story of problem-solving, innovation, and continuous learning. 
               Thank you for visiting. I hope you enjoy the experience as much as I enjoyed creating it. This portfolio is a living testament to my skills, my dedication, and the unique perspective I bring to the world of technology.
               </p>
             </div>
