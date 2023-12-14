@@ -27,6 +27,8 @@ export default function Home() {
   const [geekSquadSection, setGeekSquadSection] = useState(false);
   const [isRotated, setIsRotate] = useState(false);
   const [milRotate, setMilRotate] = useState(false);
+  const [isClass, setClass] = useState(false);
+  const [divContent, setDivContent] = useState("Classes!")
   const technicalSkillsRef = useRef(null);
   const awardsCertsRef = useRef(null);
   const containerRef = useRef(null);
@@ -41,7 +43,31 @@ export default function Home() {
   const handleMilClick = () => {
     setMilitarySection(!militarySection);
     setMilRotate(!milRotate);
-  }
+  };
+
+  const handleClassClick = () =>{
+    setClass(true);
+  };
+
+  const webContent = () =>{
+    setDivContent('Introduction to concepts and techniques for developing web applications. Became familiar with developing modern web application development using technologies such as HTML, CSS, JavaScript, React, Node.js, Express and MongoDB.')
+  };
+
+  const softwareContent = () =>{
+    setDivContent('Software Testing. Version Control Systems. Unit Testing. Black Box Testing. White Box Testing. Test-Driven Development.')
+  };
+
+  const operatingContent = () =>{
+    setDivContent('Memory Organization. I/O control. Multitasking. Process Control. Resource Management. Scheduling algorithms. File systems and storage architectures.')
+  };
+
+  const assemblyContent = () =>{
+    setDivContent('Program Design (Modularization). MASM Assembly. CISC vs. RISC Architectures. Parallelism. Irvine Procedures.')
+  };
+
+  const dataContent = () =>{
+    setDivContent('Abstract Data Types, Dynamic Arrays, Linked Lists, Trees and Graphs. Binary search trees. Hash Tables. Storage Management. Complexity analysis of Data Structures.')
+  };
 
   const items = [
     { id: 1, title: "Back End Developer", department: "Engineering", type: "Full-time", location: "Remote" },
@@ -69,19 +95,6 @@ export default function Home() {
       x: -350,
       ease: "none",
       duration: 6
-    });
-
-    gsap.to(sections, {
-      xPercent: -100 * (sections.length - 1),
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".scroll-container",
-        pin: true,
-        scrub: 1,
-        snap: 1 / (sections.length - 1),
-        end: () => "+=" +
-          document.querySelector(".scroll-container").offsetWidth
-      }
     });
 
 
@@ -143,7 +156,7 @@ export default function Home() {
         <section>
           <nav className="py-4 mb-12 flex justify-between dark:text-white z-100">
             <div>
-              <div className="absolute overflow-hidden -z-100 pl-6 pt-4">
+              {/* <div className="absolute overflow-hidden -z-100 pl-6 pt-4">
                 <Image
                   src={skidraw}
                   quality={100}
@@ -153,14 +166,14 @@ export default function Home() {
                   alt="Crested Butte"
                   className="opacity-50"
                 />
-              </div>
+              </div> */}
               <h1 className="relative font-burtons text-xl pl-10 z-1">developedbyJacob</h1>
             </div>
             <div className="hidden lg:flex pr-10">
               <ul className="flex items-center">
                 <li>
                   <a
-                    className="relative bg-gradient-to-r from-cyan-500 text- to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8"
+                    className="relative bg-gradient-to-r from-sky-500 text- to-sky-700 text-white px-4 py-2 border-none rounded-md ml-8"
                     href="/Resume"
                     target="_blank"
                   >
@@ -180,9 +193,6 @@ export default function Home() {
             <h2 className="relative lg:text-9xl text-teal-600 font-medium dark:text-white md:text-9xl italic font-serif text-black opacity-60">
               Jacob Heinrich
             </h2>
-            <h3 className="relative text-2xl dark:text-white md:text-3xl text-black opacity-60">
-              Software Developer
-            </h3>
             <div className="relative lg:text-4xl flex justify-center gap-16 py-3 text-gray-600 dark:text-white text-black">
               <Link href="/photography"><button className="opacity-60 transition ease-in-out hover:opacity-100 duration-500"><FaCameraRetro /></button></Link>
               <Link href="#about"><button className="opacity-60 transition ease-in-out hover:opacity-100 duration-500"><FaUser /></button></Link>
@@ -193,68 +203,52 @@ export default function Home() {
           <section>
             <div className="scroll-smooth text-center h-screen">
               <div className="technicalSkills" ref={technicalSkillsRef}>
-                <h1 className="relative font-anton lg:text-6xl text-4xl font-bold dark:text-white p-4 underline opacity-80">
-                  Technical Skills
+                <h1 className="relative font-anton lg:text-6xl text-4xl font-bold dark:text-white p-4 opacity-80">
+                  Welcome to my portfolio!
                 </h1>
-                <h4 className="py-4 dark:text-white lg:text-2xl text-xl font-rajdhani">Python, C, HTML/CSS, Javascript, Java, React, TailwindCSS, Node.js</h4>
               </div>
             </div>
           </section>
           <section>
             <div className="scroll-smooth text-center h-screen">
               <div className="awardCerts" ref={awardsCertsRef}>
-                <h1 className="relative font-anton lg:text-6xl text-4xl font-bold dark:text-white p-4 underline opacity-80">
-                  Awards and Certifications
+                <h1 className="relative font-anton lg:text-6xl text-4xl font-bold dark:text-white p-4 opacity-80">
+                  Software Developer
                 </h1>
-                <h4 className="py-4 dark:text-white lg:text-2xl text-xl font-rajdhani">Apple Certified Technician</h4>
-                <h4 className="py-4 dark:text-white lg:text-2xl text-xl font-rajdhani">Air Force Meritourious Service Medal</h4>
-                <h4 className="py-4 dark:text-white lg:text-2xl text-xl font-rajdhani">Afghanistan Campaign Medal</h4>
               </div>
             </div>
           </section>
         </section>
         <section className="h-full">
         </section>
-        <section id="education">
-          <div className="lg:hidden dark:text-white text-center">
-            <h1>
-              Bachelor of Arts in Economics
+        <section id="education" className="h-screen text-center">
+          <div>
+            {isClass ? 
+          <div className="xl:absolute lg:right-80 lg:p-4 w-64 dark:text-white bg-sky-500/25 rounded-lg">
+            {divContent}</div>:
+            <></>}
+            <h1 className="text-4xl font-anton font-bold lg:text-6xl pb-6 dark:text-white">
+              Education
             </h1>
-            <p className="mb-36">
-              University of Colorado
-            </p>
-            <h1>
-              Bachelor of Science in Computer Science
-            </h1>
-            <p className="mb-96">
-              Colorado State University
-            </p>
-          </div>
-          <div ref={containerRef} className="scroll-container overflow-y-hidden overflow-x-hidden w-screen hidden md:block dark:text-white whitespace-nowrap">
-            <div className="panel h-screen inline-block flex-shrink-0 justify-center items-center dark:text-white min-w-full text-center font-rajdhani lg:text-4xl">
-              <h1 className="font-bold pt-96">Bachelor of Arts in Economics at University of Colorado</h1>
-              <p className="animate-pulse duration-1000 pt-6 underline">Coursework</p>
-              <ul className="text-xl">
-                <li>Statistics</li>
-                <li>Econometrics</li>
-                <li>Environmental Economics</li>
-                <li>Macroeconomics</li>
-                <li>Microeconomics</li>
-                <li>Calculus I</li>
-              </ul>
-            </div>
-            <div className="panel h-screen inline-block flex-shrink-0 items-center justify-center dark:text-white min-w-full text-center font-rajdhani lg:text-4xl">
-              <h1 className="font-bold">Bachelor of Science in Computer Science at Colorado State University</h1>
-              <p className="animate-pulse duration-100 pt-6 lg:text-4xl underline">Coursework</p>
-              <ul className="text-xl">
-                <li>Operating Systems</li>
-                <li>Data Structures</li>
-                <li>Discrete Mathematics</li>
-                <li>Web Development</li>
-                <li>Computer Graphics</li>
-                <li>Computer Architecture</li>
-              </ul>
-            </div>
+            <h2 className="text-4xl font-anton dark:text-white">
+              Bachelor of Science Computer Science
+            </h2>
+            <ul onClick={handleClassClick} className="dark:text-white">
+              <li className="hover:text-sky-500"><button onClick={webContent}>Web Development</button></li>
+              <li className="hover:text-sky-500"><button onClick={operatingContent}>Operating Systems</button></li>
+              <li className="hover:text-sky-500"><button onClick={softwareContent}>Software Engineering I & II</button></li>
+              <li className="hover:text-sky-500"><button onClick={dataContent}>Data Structures</button></li>
+              <li className="hover:text-sky-500"><button onClick={assemblyContent}>Computer Architecture and Assembly Language</button></li>
+            </ul>
+            <h2 className="text-4xl pt-10 font-anton dark:text-white">
+              Bachelor of Arts Economics
+            </h2>
+            <ul className="dark:text-white">
+              <li>Econometrics</li>
+              <li>Microeconomics</li>
+              <li>Macroeconomics</li>
+              <li>Statistics w/ Computer Applications</li>
+            </ul>
           </div>
         </section>
         <section id="about">
@@ -304,23 +298,23 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="pt-96">
+        <section className="pt-96 opacity-80">
       <div className='text-center'>
-        <h1 className='text-5xl pt-10 font-rajdhani'>Projects</h1>
+        <h1 className='text-5xl pt-10 font-rajdhani dark:text-white'>Projects</h1>
         <motion.div
             className="box"
             animate={{
               scale: [1, 2, 2, 1, 1],
-              rotate: [0, 0, 180, 180, 0],
-              borderRadius: ["0%", "0%", "50%", "50%", "0%"],
-              backgroundColor:["#0797Ef"]
+              rotate: [180, 180, 0, 0, 180],
+              borderRadius: ["50%", "50%", "0%", "0%", "50%"],
+              backgroundColor:["#87CEEB"]
             }}
             transition={{
               duration: 2,
               ease: "easeInOut",
               times: [0, 0.2, 0.5, 0.8, 1],
               repeat: Infinity,
-              repeatDelay: 10,
+              repeatDelay: 3,
             }}
           />
       </div>
@@ -393,6 +387,37 @@ export default function Home() {
                 <li>TailwindCSS</li>
                 <li>Framer</li>
               </ul>
+            </div>
+        </li>
+        <li className='listElement text-center'>
+          <h1 className='text-4xl bg-sky-500/50 p-6 font-rajdhani font-bold'>
+           NASA APOD Website
+          </h1>
+          <h3 className="pt-6 text-2xl underline">About</h3>
+            <div className="flex justify-center items-center">
+              <p className="w-3/4">
+              Embarking on one of my earliest ventures into React development, this application was the product of my Web Development class at Colorado State University. 
+              Fueled by my enduring interest in astronomy, 
+              the project centers on the NASA Astronomy Picture of the Day (APoD). Users can input a date in the YYYY-DD-MM format, 
+              allowing the application to dynamically fetch and showcase the corresponding image captured by NASA. 
+              As I navigated the complexities of React, this project not only became a technical milestone but also a testament 
+              to my passion for space exploration. It reflects my journey in React, 
+              delving into API integration, asynchronous JavaScript, and crafting a responsive user interface.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl underline">Languages Used</h3>
+              <ul>
+                <li>Javascript</li>
+                <li>HTML/CSS</li>
+              </ul>
+              <h3 className="text-2xl underline">Frameworks and Packages Used</h3>
+              <ul>
+                <li>React</li>
+                <li>NASA API</li>
+              </ul>
+              <h3 className="text-2xl pt-6">Demo</h3>
+              <Link href="https://nasa-apod-alpha.vercel.app/" rel="noopeneer noreferrer"><a target="_blank" className="p-2 bg-sky-500 hover:bg-sky-500/50 rounded-lg text-white">Demo Link</a></Link>
             </div>
         </li>
       </ul>

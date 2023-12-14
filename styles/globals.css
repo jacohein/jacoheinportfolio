@@ -278,7 +278,7 @@ circle {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: black;
+  background: #87CEEB;
   -webkit-border-radius: 1ex;
 }
 
@@ -298,10 +298,10 @@ circle {
 
 .box {
   position:relative;
-  left:800px;
-  bottom:100px;
-  width: 50px;
-  height: 50px;
+  left:913px;
+  bottom:57px;
+  width: 20px;
+  height: 20px;
   background: black;
 }
 
