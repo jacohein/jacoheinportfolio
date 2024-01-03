@@ -45,30 +45,6 @@ export default function Home() {
     setMilRotate(!milRotate);
   };
 
-  const handleClassClick = () =>{
-    setClass(true);
-  };
-
-  const webContent = () =>{
-    setDivContent('Introduction to concepts and techniques for developing web applications. Became familiar with developing modern web application development using technologies such as HTML, CSS, JavaScript, React, Node.js, Express and MongoDB.')
-  };
-
-  const softwareContent = () =>{
-    setDivContent('Software Testing. Version Control Systems. Unit Testing. Black Box Testing. White Box Testing. Test-Driven Development.')
-  };
-
-  const operatingContent = () =>{
-    setDivContent('Memory Organization. I/O control. Multitasking. Process Control. Resource Management. Scheduling algorithms. File systems and storage architectures.')
-  };
-
-  const assemblyContent = () =>{
-    setDivContent('Program Design (Modularization). MASM Assembly. CISC vs. RISC Architectures. Parallelism. Irvine Procedures.')
-  };
-
-  const dataContent = () =>{
-    setDivContent('Abstract Data Types, Dynamic Arrays, Linked Lists, Trees and Graphs. Binary search trees. Hash Tables. Storage Management. Complexity analysis of Data Structures.')
-  };
-
   const items = [
     { id: 1, title: "Back End Developer", department: "Engineering", type: "Full-time", location: "Remote" },
     { id: 2, title: "Front End Developer", department: "Engineering", type: "Full-time", location: "Remote" },
@@ -194,7 +170,6 @@ export default function Home() {
               Jacob Heinrich
             </h2>
             <div className="relative lg:text-4xl flex justify-center gap-16 py-3 text-gray-600 dark:text-white text-black">
-              <Link href="/photography"><button className="opacity-60 transition ease-in-out hover:opacity-100 duration-500"><FaCameraRetro /></button></Link>
               <Link href="#about"><button className="opacity-60 transition ease-in-out hover:opacity-100 duration-500"><FaUser /></button></Link>
               <Link href="#education"><button className="opacity-60 transition ease-in-out hover:opacity-100 duration-500"><FaBook /></button></Link>
               <Link href="#contact"><button className="opacity-60 transition ease-in-out hover:opacity-100 duration-500"><FaEnvelope /></button></Link>
@@ -233,12 +208,12 @@ export default function Home() {
             <h2 className="text-4xl font-anton dark:text-white">
               Bachelor of Science Computer Science
             </h2>
-            <ul onClick={handleClassClick} className="dark:text-white">
-              <li className="hover:text-sky-500"><button onClick={webContent}>Web Development</button></li>
-              <li className="hover:text-sky-500"><button onClick={operatingContent}>Operating Systems</button></li>
-              <li className="hover:text-sky-500"><button onClick={softwareContent}>Software Engineering I & II</button></li>
-              <li className="hover:text-sky-500"><button onClick={dataContent}>Data Structures</button></li>
-              <li className="hover:text-sky-500"><button onClick={assemblyContent}>Computer Architecture and Assembly Language</button></li>
+            <ul className="dark:text-white">
+              <li>Web Development</li>
+              <li>Operating Systems</li>
+              <li>Software Engineering I & II</li>
+              <li>Structures</li>
+              <li>Architecture and Assembly Language</li>
             </ul>
             <h2 className="text-4xl pt-10 font-anton dark:text-white">
               Bachelor of Arts Economics
@@ -359,7 +334,7 @@ export default function Home() {
                 <li>threading</li>
               </ul>
               <h3 className="text-2xl pt-6">Project Report</h3>
-              <Link href="https://docs.google.com/document/d/1Qz7Vkds5nbaSZ6uhhpMQFF0_ont5fWpk8qKzJYdXYjU/edit?usp=sharing" rel="noopeneer noreferrer"><a target="_blank" className="p-2 bg-sky-500 hover:bg-sky-500/50 rounded-lg text-white">Report Link</a></Link>
+              <Link href="https://docs.google.com/document/d/1Qz7Vkds5nbaSZ6uhhpMQFF0_ont5fWpk8qKzJYdXYjU/edit?usp=sharing" target="_blank" className="p-2 bg-sky-500 hover:bg-sky-500/50 rounded-lg text-white" rel="noopeneer noreferrer">Report Link</Link>
             </div>
         </li>
         <li className='listElement text-center'>
@@ -417,7 +392,7 @@ export default function Home() {
                 <li>NASA API</li>
               </ul>
               <h3 className="text-2xl pt-6">Demo</h3>
-              <Link href="https://nasa-apod-alpha.vercel.app/" rel="noopeneer noreferrer"><a target="_blank" className="p-2 bg-sky-500 hover:bg-sky-500/50 rounded-lg text-white">Demo Link</a></Link>
+              <Link href="https://nasa-apod-alpha.vercel.app/" target="_blank" className="p-2 bg-sky-500 hover:bg-sky-500/50 rounded-lg text-white" rel="noopeneer noreferrer">Demo Link</Link>
             </div>
         </li>
       </ul>
